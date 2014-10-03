@@ -1,6 +1,3 @@
-*.suo
-*.resx
-
 /JobClassifyer/bin/Debug/*
 /JobClassifyer/bin/Release/*.pdb
 /JobClassifyer/bin/Release/*.xml
