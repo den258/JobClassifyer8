@@ -1005,6 +1005,16 @@ Public Class fClassifyer
 
     Private Sub FormClassifyer_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
 
+        If Diagnostics.Process.GetProcessesByName( _
+            Diagnostics.Process.GetCurrentProcess.ProcessName).Length > 1 Then
+
+            MessageBox.Show("多重起動はできません。")
+            intCloseWithCancel = DialogResult.Cancel
+            Me.Close()
+            Exit Sub
+
+        End If
+
         Dim strFile As String = Application.StartupPath + "\settings.xml"
 
         If Not isExistsFile(strFile) Then
